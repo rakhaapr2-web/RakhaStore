@@ -1,0 +1,2 @@
+# RakhaStore
+Menjual barang mahal
