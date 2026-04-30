@@ -36,17 +36,91 @@
             justify-content: space-between;
             align-items: center;
             padding: 0 2rem;
+            gap: 1rem;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: bold;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-wrapper {
+            flex: 1;
+            max-width: 460px;
+            position: relative;
+        }
+
+        .search-wrapper svg {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: #aaa;
+            pointer-events: none;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.6rem 2.8rem 0.6rem 2.8rem;
+            border: 2px solid rgba(255,255,255,0.25);
+            border-radius: 30px;
+            font-size: 0.92rem;
+            color: #333;
+            background: rgba(255,255,255,0.95);
+            outline: none;
+            transition: all 0.25s;
+        }
+
+        .search-input::placeholder {
+            color: #aaa;
+        }
+
+        .search-input:focus {
+            border-color: rgba(255,255,255,0.7);
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e0e0e0;
+            border: none;
+            color: #666;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            line-height: 1;
+        }
+
+        .search-clear.visible {
+            display: flex;
+        }
+
+        .search-clear:hover {
+            background: #ccc;
+            color: #333;
         }
 
         .nav-actions {
             display: flex;
             align-items: center;
             gap: 0.8rem;
+            flex-shrink: 0;
         }
 
         .cart-info {
@@ -116,7 +190,7 @@
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             padding: 4rem 2rem;
             border-radius: 20px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
@@ -128,6 +202,138 @@
         .hero p {
             font-size: 1.15rem;
             color: #555;
+        }
+
+        /* ===== CATEGORY BAR ===== */
+        .category-bar-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .category-bar {
+            display: flex;
+            gap: 0.6rem;
+            overflow-x: auto;
+            padding-bottom: 0.6rem;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .category-bar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .category-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            color: #555;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .category-pill:hover {
+            border-color: #b0b0c0;
+            background: #f8f8fc;
+            color: #333;
+        }
+
+        .category-pill.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 14px rgba(102,126,234,0.35);
+        }
+
+        .category-pill .pill-count {
+            background: rgba(0,0,0,0.08);
+            padding: 0.1rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .category-pill.active .pill-count {
+            background: rgba(255,255,255,0.25);
+            color: white;
+        }
+
+        /* Filter status bar */
+        .filter-status {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.2rem;
+            padding: 0.8rem 1.2rem;
+            background: #f0f0ff;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .filter-status.visible {
+            display: flex;
+        }
+
+        .filter-status-text {
+            font-size: 0.9rem;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .filter-status-text strong {
+            color: #667eea;
+        }
+
+        .filter-clear-btn {
+            background: none;
+            border: 2px solid #667eea;
+            color: #667eea;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-clear-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #aaa;
+            display: none;
+        }
+
+        .empty-state.visible {
+            display: block;
+        }
+
+        .empty-state-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 0.5rem;
+        }
+
+        .empty-state p {
+            font-size: 0.95rem;
         }
 
         .section-title {
@@ -347,7 +553,6 @@
             background: rgba(255,255,255,0.35);
         }
 
-        /* Tabs */
         .auth-tabs {
             display: flex;
             background: #f8f9fa;
@@ -564,7 +769,6 @@
             text-decoration: underline;
         }
 
-        /* ===== PASSWORD TOGGLE ===== */
         .input-wrapper {
             position: relative;
         }
@@ -764,6 +968,17 @@
             font-size: 1.6rem;
             margin-bottom: 0.4rem;
             color: #222;
+        }
+
+        .detail-category-tag {
+            display: inline-block;
+            background: #f0f0ff;
+            color: #667eea;
+            padding: 0.2rem 0.7rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
         }
 
         .detail-price-row {
@@ -969,9 +1184,33 @@
             position: relative;
         }
 
+        /* Category tag on card */
+        .product-category-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* Highlight match */
+        .highlight-match {
+            background: #fff3cd;
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
-            nav { padding: 0 1rem; }
+            nav { padding: 0 1rem; gap: 0.5rem; }
+            .logo { font-size: 1.3rem; }
+            .search-wrapper { max-width: 200px; }
             .nav-btn span.btn-label { display: none; }
             .detail-image-wrapper { height: 200px; }
             .detail-body { padding: 1.4rem; }
@@ -980,6 +1219,12 @@
             .products { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
             .auth-body { padding: 1.5rem; }
             .social-btns { flex-direction: column; }
+            .category-pill { padding: 0.5rem 0.9rem; font-size: 0.82rem; }
+        }
+
+        @media (max-width: 480px) {
+            .search-wrapper { max-width: 140px; }
+            .search-input { font-size: 0.85rem; padding: 0.5rem 2.4rem; }
         }
     </style>
 </head>
@@ -987,6 +1232,14 @@
     <header>
         <nav>
             <div class="logo">🛒 RakhaStore</div>
+            <div class="search-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" class="search-input" id="searchInput" placeholder="Cari produk..." autocomplete="off">
+                <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+            </div>
             <div class="nav-actions">
                 <div class="cart-info">
                     <button class="nav-btn" onclick="toggleCart()">🛒 <span class="btn-label" id="cart-count">0</span> <span class="btn-label">Item</span></button>
@@ -1002,11 +1255,38 @@
             <p>Beli produk berkualitas dengan harga terbaik 🔥 Flash sale hari ini!</p>
         </div>
 
-        <div class="section-title">🔥 Promo & Diskon Spesial</div>
-        <div class="products" id="discountProducts"></div>
+        <!-- Category Bar -->
+        <div class="category-bar-wrapper">
+            <div class="category-bar" id="categoryBar"></div>
+        </div>
 
-        <div class="section-title">📦 Semua Produk</div>
-        <div class="products" id="allProducts"></div>
+        <!-- Filter Status -->
+        <div class="filter-status" id="filterStatus">
+            <div class="filter-status-text" id="filterStatusText"></div>
+            <button class="filter-clear-btn" onclick="clearAllFilters()">✕ Reset Filter</button>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState">
+            <div class="empty-state-icon">🔍</div>
+            <h3>Produk tidak ditemukan</h3>
+            <p id="emptyStateMsg">Coba kata kunci lain atau pilih kategori berbeda.</p>
+        </div>
+
+        <!-- Default Sections (shown when no filter active) -->
+        <div id="defaultSections">
+            <div class="section-title">🔥 Promo & Diskon Spesial</div>
+            <div class="products" id="discountProducts"></div>
+
+            <div class="section-title">📦 Semua Produk</div>
+            <div class="products" id="allProducts"></div>
+        </div>
+
+        <!-- Filtered Section (shown when filter active) -->
+        <div id="filteredSection" style="display:none;">
+            <div class="section-title" id="filteredTitle">📦 Hasil Pencarian</div>
+            <div class="products" id="filteredProducts"></div>
+        </div>
     </main>
 
     <footer>&copy; 2025 RakhaStore — Semua hak dilindungi</footer>
@@ -1024,7 +1304,6 @@
                 <button class="auth-tab" id="tabRegister" onclick="switchTab('register')">Daftar</button>
             </div>
             <div class="auth-body">
-                <!-- Login Form -->
                 <form class="auth-form active" id="loginForm" onsubmit="handleLogin(event)">
                     <div class="form-group">
                         <label>Email</label>
@@ -1054,7 +1333,6 @@
                     </div>
                 </form>
 
-                <!-- Register Form -->
                 <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
                     <div class="form-group">
                         <label>Nama Lengkap</label>
@@ -1125,94 +1403,121 @@
     </div>
 
     <script>
+        // ===== DATA KATEGORI =====
+        const categories = [
+            { id: 'semua', name: 'Semua', icon: '📋' },
+            { id: 'laptop', name: 'Laptop', icon: '💻' },
+            { id: 'smartphone-tablet', name: 'Smartphone & Tablet', icon: '📱' },
+            { id: 'audio', name: 'Audio', icon: '🎧' },
+            { id: 'aksesoris-komputer', name: 'Aksesoris Komputer', icon: '⌨️' },
+            { id: 'fotografi', name: 'Fotografi', icon: '📷' },
+            { id: 'wearable', name: 'Wearable', icon: '⌚' },
+            { id: 'aksesoris-lainnya', name: 'Aksesoris Lainnya', icon: '🔌' },
+        ];
+
         // ===== DATA PRODUK =====
         const products = [
             {
                 id: 1, name: 'Laptop Gaming ROG Strix', price: 15000000, originalPrice: 18500000, discount: 19,
+                category: 'laptop',
                 image: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600&h=400&fit=crop&q=80',
                 description: 'Laptop gaming berperforma tinggi yang dirancang khusus untuk para gamer dan kreator konten. Dilengkapi prosesor generasi terbaru dan kartu grafis flagship.',
                 specs: ['Prosesor Intel Core i7 Gen 13', 'RAM 16GB DDR5', 'SSD 512GB NVMe', 'GPU RTX 4060 6GB', 'Layar 15.6" IPS 144Hz', 'Sistem Pendingin Dual Fan']
             },
             {
                 id: 2, name: 'Smartphone Galaxy Ultra', price: 4500000, originalPrice: 5299000, discount: 15,
+                category: 'smartphone-tablet',
                 image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop&q=80',
                 description: 'Smartphone mid-range dengan kamera utama 108MP yang menangkap setiap momen dengan jernih. Layar AMOLED 6.7 inci memberikan warna vivid.',
                 specs: ['Layar AMOLED 6.7" 90Hz', 'Kamera 108MP + 8MP + 2MP', 'RAM 8GB', 'Storage 128GB', 'Baterai 5000mAh', 'Fast Charging 33W']
             },
             {
                 id: 3, name: 'Headphone Sony WH-1000', price: 850000, originalPrice: 1200000, discount: 29,
+                category: 'audio',
                 image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=80',
                 description: 'Headphone wireless premium dengan Active Noise Cancellation yang efektif memblokir kebisingan lingkungan. Driver 40mm menghasilkan suara bass yang dalam.',
                 specs: ['Active Noise Cancellation', 'Driver 40mm', 'Bluetooth 5.2', 'Baterai hingga 40 jam', 'Foldable & Travel-friendly', 'Multipoint Connection']
             },
             {
                 id: 4, name: 'Smartwatch Pro Watch 5', price: 1200000,
+                category: 'wearable',
                 image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&h=400&fit=crop&q=80',
                 description: 'Smartwatch stylish dengan fitur kesehatan lengkap mulai dari pemantauan detak jantung, SpO2, hingga tracking tidur. Tahan air hingga 50 meter.',
                 specs: ['Layar AMOLED 1.43"', 'Heart Rate & SpO2 Monitor', 'GPS Built-in', 'Tahan Air 5ATM', 'Baterai hingga 14 hari', '100+ Mode Olahraga']
             },
             {
                 id: 5, name: 'Kamera Canon EOS R6', price: 8500000, originalPrice: 10500000, discount: 19,
+                category: 'fotografi',
                 image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop&q=80',
                 description: 'Kamera mirrorless profesional dengan sensor full-frame 24.2MP yang menghasilkan foto berkualitas studio.',
                 specs: ['Sensor Full-Frame 24.2MP', 'ISO Range 100-40000', 'Autofocus 45 titik', 'Video 4K 30fps', 'Body Magnesium Alloy', 'Weather Sealed']
             },
             {
                 id: 6, name: 'Tablet iPad Air', price: 3200000,
+                category: 'smartphone-tablet',
                 image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=400&fit=crop&q=80',
                 description: 'Tablet serbaguna dengan layar 10.4 inci yang nyaman untuk bekerja, belajar, atau hiburan. Didukung stylus pen untuk kreativitas.',
                 specs: ['Layar IPS 10.4" 2K', 'RAM 6GB', 'Storage 128GB', 'Baterai 7040mAh', 'Support Stylus Pen', 'Chipset Octa-core']
             },
             {
                 id: 7, name: 'Speaker JBL Boombox 3', price: 1650000, originalPrice: 2200000, discount: 25,
+                category: 'audio',
                 image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=400&fit=crop&q=80',
                 description: 'Speaker Bluetooth premium dengan suara bass yang menggelegar dan powerful. Tahan air dan debu (IP67).',
                 specs: ['Output 60W', 'IP67 Water & Dust Proof', 'Bluetooth 5.3', 'Baterai 24 Jam', 'PartyBoost Mode', 'Built-in Powerbank']
             },
             {
                 id: 8, name: 'Keyboard Mechanical RGB', price: 750000,
+                category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&h=400&fit=crop&q=80',
                 description: 'Keyboard mechanical full-size dengan switch Blue yang memberikan feedback tactile memuaskan. 16.8 juta warna RGB.',
                 specs: ['Switch Mechanical Blue', 'Full-Size Layout', '16.8M RGB Colors', 'Frame Aluminium', 'Anti-Ghosting NKRO', 'Cable Detachable USB-C']
             },
             {
                 id: 9, name: 'Mouse Gaming Logitech G502', price: 520000, originalPrice: 699000, discount: 26,
+                category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&h=400&fit=crop&q=80',
                 description: 'Mouse gaming legendari dengan sensor HERO 25K yang memberikan akurasi hingga 25.600 DPI.',
                 specs: ['Sensor HERO 25K', '25.600 DPI', '11 Tombol Programmable', 'Weight Tuning System', 'RGB Lightsync', 'Switches 50M Clicks']
             },
             {
                 id: 10, name: 'Monitor Gaming 27" IPS', price: 3200000, originalPrice: 4100000, discount: 22,
+                category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop&q=80',
                 description: 'Monitor gaming 27 inci dengan panel IPS dan refresh rate 165Hz untuk pengalaman gaming yang mulus.',
                 specs: ['Panel IPS 27" QHD', 'Refresh Rate 165Hz', 'Response Time 1ms', 'HDR400 Certified', 'FreeSync & G-Sync Compatible', 'Low Blue Light']
             },
             {
                 id: 11, name: 'TWS Earbuds Pro ANC', price: 680000, originalPrice: 899000, discount: 24,
+                category: 'audio',
                 image: 'https://images.unsplash.com/photo-1590658268037-6bf12f032f55?w=600&h=400&fit=crop&q=80',
                 description: 'True Wireless Stereo earbuds dengan Active Noise Cancellation. Driver 11mm menghasilkan suara jernih.',
                 specs: ['Active Noise Cancellation', 'Driver 11mm', 'Bluetooth 5.3', 'IPX5 Sweat Resistant', 'Baterai Total 30 Jam', 'Transparency Mode']
             },
             {
                 id: 12, name: 'Powerbank 20000mAh', price: 285000,
+                category: 'aksesoris-lainnya',
                 image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=400&fit=crop&q=80',
                 description: 'Powerbank kapasitas besar 20000mAh dengan fast charging 22.5W. Desain slim dan ringan.',
                 specs: ['Kapasitas 20000mAh', 'Fast Charging 22.5W', '2 Port USB + 1 Type-C', 'Charge 4x Smartphone', 'LED Indicator', 'Safety Protection']
             },
             {
                 id: 13, name: 'SSD External 1TB', price: 1100000, originalPrice: 1450000, discount: 24,
+                category: 'aksesoris-lainnya',
                 image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=400&fit=crop&q=80',
                 description: 'SSD external portabel dengan kecepatan baca/tulis hingga 1050/1000 MB/s.',
                 specs: ['Kapasitas 1TB', 'Baca 1050 MB/s', 'USB 3.2 Gen 2 Type-C', 'Shock Resistant', 'Compact 40g', 'PC/Mac/Android']
             },
             {
                 id: 14, name: 'Webcam 4K Auto Focus', price: 890000,
+                category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1587826354460-e41b9e0f63b4?w=600&h=400&fit=crop&q=80',
                 description: 'Webcam 4K dengan autofocus cepat dan built-in dual microphone stereo.',
                 specs: ['Resolusi 4K 30fps', 'Autofocus Cepat', 'Dual Mic Stereo', 'FOV 90°', 'Plug & Play USB', 'Zoom/Meet/OBS Ready']
             },
             {
                 id: 15, name: 'Mousepad Gaming XXL', price: 195000,
+                category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&h=400&fit=crop&q=80',
                 description: 'Mousepad gaming berukuran extra large 80x30cm dengan permukaan micro-woven cloth.',
                 specs: ['Ukuran 80 x 30 cm', 'Micro-Woven Surface', 'Anti-Slip Rubber Base', 'Tebal 4mm', 'Stitched Edges', 'All Mouse Compatible']
@@ -1222,12 +1527,13 @@
         const discountProducts = products.filter(p => p.discount);
         const nonDiscountProducts = products.filter(p => !p.discount);
         let cart = [];
+        let activeCategory = 'semua';
+        let searchQuery = '';
 
         // ===== AKUN / AUTH STATE =====
         let currentUser = JSON.parse(localStorage.getItem('rakhaUser')) || null;
         let usersDB = JSON.parse(localStorage.getItem('rakhaUsers')) || [];
 
-        // Render tombol akun di navbar
         function renderAccountNav() {
             const el = document.getElementById('navAccount');
             if (currentUser) {
@@ -1264,12 +1570,9 @@
             dd.classList.toggle('show');
         }
 
-        // Tutup dropdown saat klik di luar
         document.addEventListener('click', function(e) {
             const dd = document.getElementById('profileDropdown');
-            if (dd && dd.classList.contains('show')) {
-                dd.classList.remove('show');
-            }
+            if (dd && dd.classList.contains('show')) dd.classList.remove('show');
         });
 
         // ===== AUTH MODAL =====
@@ -1293,7 +1596,6 @@
             const registerForm = document.getElementById('registerForm');
             const title = document.getElementById('authTitle');
             const subtitle = document.getElementById('authSubtitle');
-
             clearErrors();
 
             if (tab === 'login') {
@@ -1314,69 +1616,44 @@
         }
 
         function clearErrors() {
-            document.querySelectorAll('.form-error').forEach(el => {
-                el.classList.remove('show');
-                el.textContent = '';
-            });
-            document.querySelectorAll('.auth-form input').forEach(el => {
-                el.style.borderColor = '#e9ecef';
-            });
+            document.querySelectorAll('.form-error').forEach(el => { el.classList.remove('show'); el.textContent = ''; });
+            document.querySelectorAll('.auth-form input').forEach(el => { el.style.borderColor = '#e9ecef'; });
         }
 
         function showError(id, msg) {
             const el = document.getElementById(id);
             el.textContent = msg;
             el.classList.add('show');
-            // Border merah pada input terkait
             const input = el.previousElementSibling;
             if (input) {
-                if (input.classList.contains('input-wrapper')) {
-                    input.querySelector('input').style.borderColor = '#e74c3c';
-                } else {
-                    input.style.borderColor = '#e74c3c';
-                }
+                if (input.classList.contains('input-wrapper')) input.querySelector('input').style.borderColor = '#e74c3c';
+                else input.style.borderColor = '#e74c3c';
             }
         }
 
         function togglePw(inputId, btn) {
             const input = document.getElementById(inputId);
-            if (input.type === 'password') {
-                input.type = 'text';
-                btn.textContent = '🙈';
-            } else {
-                input.type = 'password';
-                btn.textContent = '👁️';
-            }
+            if (input.type === 'password') { input.type = 'text'; btn.textContent = '🙈'; }
+            else { input.type = 'password'; btn.textContent = '👁️'; }
         }
 
         function handleLogin(e) {
             e.preventDefault();
             clearErrors();
-
             const email = document.getElementById('loginEmail').value.trim();
             const password = document.getElementById('loginPassword').value;
             let valid = true;
 
             if (!email) { showError('loginEmailErr', 'Email wajib diisi'); valid = false; }
             else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('loginEmailErr', 'Format email tidak valid'); valid = false; }
-
             if (!password) { showError('loginPwErr', 'Password wajib diisi'); valid = false; }
             else if (password.length < 6) { showError('loginPwErr', 'Password minimal 6 karakter'); valid = false; }
-
             if (!valid) return;
 
-            // Cek akun di "database" lokal
             const user = usersDB.find(u => u.email === email);
-            if (!user) {
-                showError('loginEmailErr', 'Akun tidak ditemukan. Silakan daftar terlebih dahulu.');
-                return;
-            }
-            if (user.password !== password) {
-                showError('loginPwErr', 'Password salah. Silakan coba lagi.');
-                return;
-            }
+            if (!user) { showError('loginEmailErr', 'Akun tidak ditemukan. Silakan daftar terlebih dahulu.'); return; }
+            if (user.password !== password) { showError('loginPwErr', 'Password salah. Silakan coba lagi.'); return; }
 
-            // Login berhasil
             currentUser = { name: user.name, email: user.email, phone: user.phone };
             localStorage.setItem('rakhaUser', JSON.stringify(currentUser));
             closeAuth();
@@ -1387,7 +1664,6 @@
         function handleRegister(e) {
             e.preventDefault();
             clearErrors();
-
             const name = document.getElementById('regName').value.trim();
             const phone = document.getElementById('regPhone').value.trim();
             const email = document.getElementById('regEmail').value.trim();
@@ -1398,32 +1674,22 @@
 
             if (!name) { showError('regNameErr', 'Nama wajib diisi'); valid = false; }
             else if (name.length < 3) { showError('regNameErr', 'Nama minimal 3 karakter'); valid = false; }
-
             if (!phone) { showError('regPhoneErr', 'Nomor telepon wajib diisi'); valid = false; }
             else if (!/^0[0-9]{9,12}$/.test(phone)) { showError('regPhoneErr', 'Format nomor tidak valid (contoh: 081234567890)'); valid = false; }
-
             if (!email) { showError('regEmailErr', 'Email wajib diisi'); valid = false; }
             else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('regEmailErr', 'Format email tidak valid'); valid = false; }
             else if (usersDB.find(u => u.email === email)) { showError('regEmailErr', 'Email sudah terdaftar. Silakan masuk.'); valid = false; }
-
             if (!password) { showError('regPwErr', 'Password wajib diisi'); valid = false; }
             else if (password.length < 6) { showError('regPwErr', 'Password minimal 6 karakter'); valid = false; }
-
             if (!confirm) { showError('regConfirmErr', 'Konfirmasi password wajib diisi'); valid = false; }
             else if (password !== confirm) { showError('regConfirmErr', 'Password tidak cocok'); valid = false; }
-
             if (!agree) { showNotification('⚠️ Anda harus menyetujui syarat & ketentuan'); valid = false; }
-
             if (!valid) return;
 
-            // Simpan ke "database" lokal
             usersDB.push({ name, phone, email, password });
             localStorage.setItem('rakhaUsers', JSON.stringify(usersDB));
-
-            // Auto login setelah daftar
             currentUser = { name, email, phone };
             localStorage.setItem('rakhaUser', JSON.stringify(currentUser));
-
             closeAuth();
             renderAccountNav();
             showNotification(`Akun berhasil dibuat! Selamat datang, ${name.split(' ')[0]}! 🎉`);
@@ -1445,18 +1711,169 @@
             showNotification('Anda telah keluar dari akun. 👋');
         }
 
+        // ===== KATEGORI BAR =====
+        function renderCategoryBar() {
+            const bar = document.getElementById('categoryBar');
+            bar.innerHTML = categories.map(cat => {
+                const count = cat.id === 'semua' ? products.length : products.filter(p => p.category === cat.id).length;
+                const isActive = activeCategory === cat.id;
+                return `
+                    <button class="category-pill ${isActive ? 'active' : ''}" onclick="setCategory('${cat.id}')">
+                        ${cat.icon} ${cat.name} <span class="pill-count">${count}</span>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function setCategory(catId) {
+            activeCategory = catId;
+            renderCategoryBar();
+            applyFilters();
+        }
+
+        // ===== SEARCH =====
+        const searchInput = document.getElementById('searchInput');
+        const searchClear = document.getElementById('searchClear');
+
+        searchInput.addEventListener('input', function() {
+            searchQuery = this.value.trim();
+            searchClear.classList.toggle('visible', searchQuery.length > 0);
+            applyFilters();
+        });
+
+        function clearSearch() {
+            searchInput.value = '';
+            searchQuery = '';
+            searchClear.classList.remove('visible');
+            applyFilters();
+            searchInput.focus();
+        }
+
+        // ===== FILTER LOGIC =====
+        function applyFilters() {
+            const isFiltering = activeCategory !== 'semua' || searchQuery.length > 0;
+            const defaultSections = document.getElementById('defaultSections');
+            const filteredSection = document.getElementById('filteredSection');
+            const filterStatus = document.getElementById('filterStatus');
+            const emptyState = document.getElementById('emptyState');
+
+            if (!isFiltering) {
+                defaultSections.style.display = '';
+                filteredSection.style.display = 'none';
+                filterStatus.classList.remove('visible');
+                emptyState.classList.remove('visible');
+                return;
+            }
+
+            // Filter products
+            let filtered = products;
+
+            if (activeCategory !== 'semua') {
+                filtered = filtered.filter(p => p.category === activeCategory);
+            }
+
+            if (searchQuery.length > 0) {
+                const q = searchQuery.toLowerCase();
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(q) ||
+                    p.description.toLowerCase().includes(q) ||
+                    p.specs.some(s => s.toLowerCase().includes(q)) ||
+                    getCategoryName(p.category).toLowerCase().includes(q)
+                );
+            }
+
+            defaultSections.style.display = 'none';
+            filteredSection.style.display = '';
+
+            // Build status text
+            let statusParts = [];
+            if (activeCategory !== 'semua') {
+                const catObj = categories.find(c => c.id === activeCategory);
+                statusParts.push(`Kategori: <strong>${catObj.icon} ${catObj.name}</strong>`);
+            }
+            if (searchQuery.length > 0) {
+                statusParts.push(`Pencarian: <strong>"${escapeHTML(searchQuery)}"</strong>`);
+            }
+            document.getElementById('filterStatusText').innerHTML = statusParts.join(' &nbsp;•&nbsp; ') + ` &nbsp;—&nbsp; ${filtered.length} produk ditemukan`;
+            filterStatus.classList.add('visible');
+
+            // Title
+            let titleText = '📦 Hasil Filter';
+            if (searchQuery.length > 0 && activeCategory !== 'semua') titleText = '🔍 Hasil Pencarian';
+            else if (searchQuery.length > 0) titleText = '🔍 Hasil Pencarian';
+            else if (activeCategory !== 'semua') {
+                const catObj = categories.find(c => c.id === activeCategory);
+                titleText = `${catObj.icon} ${catObj.name}`;
+            }
+            document.getElementById('filteredTitle').textContent = titleText;
+
+            // Render
+            if (filtered.length === 0) {
+                filteredSection.style.display = 'none';
+                filterStatus.classList.remove('visible');
+                emptyState.classList.add('visible');
+                let msg = 'Coba kata kunci lain atau pilih kategori berbeda.';
+                if (searchQuery.length > 0 && activeCategory !== 'semua') {
+                    msg = `Tidak ada produk "${escapeHTML(searchQuery)}" di kategori ini.`;
+                } else if (searchQuery.length > 0) {
+                    msg = `Tidak ada produk yang cocok dengan "${escapeHTML(searchQuery)}".`;
+                } else {
+                    msg = 'Kategori ini belum memiliki produk.';
+                }
+                document.getElementById('emptyStateMsg').textContent = msg;
+            } else {
+                emptyState.classList.remove('visible');
+                document.getElementById('filteredProducts').innerHTML = filtered.map(p => createCardHTML(p, searchQuery)).join('');
+            }
+        }
+
+        function clearAllFilters() {
+            activeCategory = 'semua';
+            searchQuery = '';
+            searchInput.value = '';
+            searchClear.classList.remove('visible');
+            renderCategoryBar();
+            applyFilters();
+        }
+
+        function getCategoryName(catId) {
+            const cat = categories.find(c => c.id === catId);
+            return cat ? cat.name : catId;
+        }
+
+        function getCategoryIcon(catId) {
+            const cat = categories.find(c => c.id === catId);
+            return cat ? cat.icon : '📦';
+        }
+
+        function escapeHTML(str) {
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function highlightText(text, query) {
+            if (!query) return escapeHTML(text);
+            const escaped = escapeHTML(text);
+            const qEscaped = escapeHTML(query);
+            const regex = new RegExp(`(${qEscaped.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+            return escaped.replace(regex, '<span class="highlight-match">$1</span>');
+        }
+
         // ===== PRODUK =====
-        function createCardHTML(product) {
+        function createCardHTML(product, query) {
             const hasDiscount = product.discount > 0;
             const savings = hasDiscount ? product.originalPrice - product.price : 0;
+            const nameHTML = query ? highlightText(product.name, query) : escapeHTML(product.name);
             return `
                 <div class="product-card" onclick="openDetail(${product.id})">
                     <div class="product-image-wrapper">
-                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        <img src="${product.image}" alt="${escapeHTML(product.name)}" loading="lazy">
                         ${hasDiscount ? `<div class="discount-badge">-${product.discount}%</div>` : ''}
+                        <div class="product-category-tag">${getCategoryIcon(product.category)} ${getCategoryName(product.category)}</div>
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">${product.name}</h3>
+                        <h3 class="product-title">${nameHTML}</h3>
                         <div class="price-row">
                             <div class="product-price">Rp ${product.price.toLocaleString('id-ID')}</div>
                             ${hasDiscount ? `<div class="original-price">Rp ${product.originalPrice.toLocaleString('id-ID')}</div>` : ''}
@@ -1470,8 +1887,8 @@
         }
 
         function renderProducts() {
-            document.getElementById('discountProducts').innerHTML = discountProducts.map(createCardHTML).join('');
-            document.getElementById('allProducts').innerHTML = nonDiscountProducts.map(createCardHTML).join('');
+            document.getElementById('discountProducts').innerHTML = discountProducts.map(p => createCardHTML(p)).join('');
+            document.getElementById('allProducts').innerHTML = nonDiscountProducts.map(p => createCardHTML(p)).join('');
         }
 
         // ===== PRODUCT DETAIL =====
@@ -1485,12 +1902,13 @@
             document.getElementById('detailContent').innerHTML = `
                 <button class="detail-close" onclick="closeDetail()">✕</button>
                 <div class="detail-image-wrapper">
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="${product.image}" alt="${escapeHTML(product.name)}">
                     ${hasDiscount ? `<div class="detail-badge">-${product.discount}% OFF</div>` : ''}
                     ${hasDiscount ? `<div class="detail-saved">Hemat Rp ${savings.toLocaleString('id-ID')}</div>` : ''}
                 </div>
                 <div class="detail-body">
-                    <h2>${product.name}</h2>
+                    <div class="detail-category-tag">${getCategoryIcon(product.category)} ${getCategoryName(product.category)}</div>
+                    <h2>${escapeHTML(product.name)}</h2>
                     <div class="detail-price-row">
                         <div class="detail-price">Rp ${product.price.toLocaleString('id-ID')}</div>
                         ${hasDiscount ? `<div class="detail-original-price">Rp ${product.originalPrice.toLocaleString('id-ID')}</div>` : ''}
@@ -1498,9 +1916,9 @@
                     ${hasDiscount ? `<div class="detail-savings-line">🎉 Anda menghemat Rp ${savings.toLocaleString('id-ID')} dari harga normal!</div>` : ''}
                     <div class="detail-specs">
                         <h4>Spesifikasi</h4>
-                        <ul>${product.specs.map(s => `<li>${s}</li>`).join('')}</ul>
+                        <ul>${product.specs.map(s => `<li>${escapeHTML(s)}</li>`).join('')}</ul>
                     </div>
-                    <p class="detail-desc">${product.description}</p>
+                    <p class="detail-desc">${escapeHTML(product.description)}</p>
                     <button class="detail-add-cart" onclick="addToCart(${product.id}); closeDetail();">🛒 Tambah ke Keranjang — Rp ${product.price.toLocaleString('id-ID')}</button>
                 </div>
             `;
@@ -1553,9 +1971,9 @@
                 container.innerHTML = cart.map(item => `
                     <div class="cart-item">
                         <div class="cart-item-left">
-                            <img class="cart-item-img" src="${item.image}" alt="${item.name}">
+                            <img class="cart-item-img" src="${item.image}" alt="${escapeHTML(item.name)}">
                             <div>
-                                <strong style="font-size:0.9rem;">${item.name}</strong>
+                                <strong style="font-size:0.9rem;">${escapeHTML(item.name)}</strong>
                                 ${item.discount ? `<div style="font-size:0.75rem;color:#e74c3c;font-weight:600;">-${item.discount}%</div>` : ''}
                                 <small style="color:#888;">Rp ${item.price.toLocaleString('id-ID')} × ${item.quantity}</small>
                             </div>
@@ -1581,7 +1999,6 @@
 
         function checkout() {
             if (cart.length === 0) { alert('Keranjang kosong!'); return; }
-
             if (!currentUser) {
                 toggleCart();
                 openAuth('login');
@@ -1635,12 +2052,18 @@
                 else if (document.getElementById('cartModal').classList.contains('active')) toggleCart();
                 else if (document.getElementById('authModal').classList.contains('active')) closeAuth();
             }
+            // Ctrl+K or / to focus search (when not in input)
+            if ((e.key === '/' || (e.ctrlKey && e.key === 'k')) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                searchInput.focus();
+            }
         });
 
         // ===== INIT =====
         renderProducts();
         updateCartDisplay();
         renderAccountNav();
+        renderCategoryBar();
     </script>
 </body>
 </html>
