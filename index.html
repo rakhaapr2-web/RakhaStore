@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Online - Jualan Serba Ada</title>
+    <title>Toko Online - RakhaStore</title>
     <style>
         * {
             margin: 0;
@@ -46,7 +46,6 @@
             flex-shrink: 0;
         }
 
-        /* ===== SEARCH BAR ===== */
         .search-wrapper {
             flex: 1;
             max-width: 460px;
@@ -77,9 +76,7 @@
             transition: all 0.25s;
         }
 
-        .search-input::placeholder {
-            color: #aaa;
-        }
+        .search-input::placeholder { color: #aaa; }
 
         .search-input:focus {
             border-color: rgba(255,255,255,0.7);
@@ -107,14 +104,9 @@
             line-height: 1;
         }
 
-        .search-clear.visible {
-            display: flex;
-        }
+        .search-clear.visible { display: flex; }
 
-        .search-clear:hover {
-            background: #ccc;
-            color: #333;
-        }
+        .search-clear:hover { background: #ccc; color: #333; }
 
         .nav-actions {
             display: flex;
@@ -123,11 +115,7 @@
             flex-shrink: 0;
         }
 
-        .cart-info {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        .cart-info { display: flex; align-items: center; gap: 0.5rem; }
 
         .nav-btn {
             background: rgba(255,255,255,0.2);
@@ -161,9 +149,7 @@
             transition: background 0.2s;
         }
 
-        .user-badge:hover {
-            background: rgba(255,255,255,0.35);
-        }
+        .user-badge:hover { background: rgba(255,255,255,0.35); }
 
         .user-badge .user-avatar {
             width: 26px;
@@ -193,21 +179,10 @@
             margin-bottom: 2rem;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #333; }
+        .hero p { font-size: 1.15rem; color: #555; }
 
-        .hero p {
-            font-size: 1.15rem;
-            color: #555;
-        }
-
-        /* ===== CATEGORY BAR ===== */
-        .category-bar-wrapper {
-            margin-bottom: 2rem;
-        }
+        .category-bar-wrapper { margin-bottom: 2rem; }
 
         .category-bar {
             display: flex;
@@ -218,9 +193,7 @@
             -ms-overflow-style: none;
         }
 
-        .category-bar::-webkit-scrollbar {
-            display: none;
-        }
+        .category-bar::-webkit-scrollbar { display: none; }
 
         .category-pill {
             display: flex;
@@ -240,11 +213,7 @@
             user-select: none;
         }
 
-        .category-pill:hover {
-            border-color: #b0b0c0;
-            background: #f8f8fc;
-            color: #333;
-        }
+        .category-pill:hover { border-color: #b0b0c0; background: #f8f8fc; color: #333; }
 
         .category-pill.active {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -261,12 +230,8 @@
             font-weight: 700;
         }
 
-        .category-pill.active .pill-count {
-            background: rgba(255,255,255,0.25);
-            color: white;
-        }
+        .category-pill.active .pill-count { background: rgba(255,255,255,0.25); color: white; }
 
-        /* Filter status bar */
         .filter-status {
             display: none;
             align-items: center;
@@ -278,19 +243,10 @@
             border-left: 4px solid #667eea;
         }
 
-        .filter-status.visible {
-            display: flex;
-        }
+        .filter-status.visible { display: flex; }
 
-        .filter-status-text {
-            font-size: 0.9rem;
-            color: #444;
-            font-weight: 500;
-        }
-
-        .filter-status-text strong {
-            color: #667eea;
-        }
+        .filter-status-text { font-size: 0.9rem; color: #444; font-weight: 500; }
+        .filter-status-text strong { color: #667eea; }
 
         .filter-clear-btn {
             background: none;
@@ -304,12 +260,8 @@
             transition: all 0.2s;
         }
 
-        .filter-clear-btn:hover {
-            background: #667eea;
-            color: white;
-        }
+        .filter-clear-btn:hover { background: #667eea; color: white; }
 
-        /* Empty state */
         .empty-state {
             text-align: center;
             padding: 4rem 2rem;
@@ -317,24 +269,10 @@
             display: none;
         }
 
-        .empty-state.visible {
-            display: block;
-        }
-
-        .empty-state-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .empty-state h3 {
-            font-size: 1.3rem;
-            color: #888;
-            margin-bottom: 0.5rem;
-        }
-
-        .empty-state p {
-            font-size: 0.95rem;
-        }
+        .empty-state.visible { display: block; }
+        .empty-state-icon { font-size: 4rem; margin-bottom: 1rem; }
+        .empty-state h3 { font-size: 1.3rem; color: #888; margin-bottom: 0.5rem; }
+        .empty-state p { font-size: 0.95rem; }
 
         .section-title {
             font-size: 1.6rem;
@@ -383,9 +321,7 @@
             transition: transform 0.4s;
         }
 
-        .product-card:hover .product-image-wrapper img {
-            transform: scale(1.08);
-        }
+        .product-card:hover .product-image-wrapper img { transform: scale(1.08); }
 
         .discount-badge {
             position: absolute;
@@ -401,9 +337,7 @@
             box-shadow: 0 3px 10px rgba(231,76,60,0.4);
         }
 
-        .product-info {
-            padding: 1.2rem 1.4rem 1.4rem;
-        }
+        .product-info { padding: 1.2rem 1.4rem 1.4rem; }
 
         .product-title {
             font-size: 1.05rem;
@@ -421,30 +355,12 @@
             flex-wrap: wrap;
         }
 
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: #e74c3c;
-        }
+        .product-price { font-size: 1.3rem; font-weight: 800; color: #e74c3c; }
 
-        .original-price {
-            font-size: 0.82rem;
-            color: #bbb;
-            text-decoration: line-through;
-        }
+        .original-price { font-size: 0.82rem; color: #bbb; text-decoration: line-through; }
 
-        .savings-text {
-            color: #27ae60;
-            font-size: 0.78rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .product-hint {
-            font-size: 0.76rem;
-            color: #aaa;
-            margin-bottom: 0.9rem;
-        }
+        .savings-text { color: #27ae60; font-size: 0.78rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .product-hint { font-size: 0.76rem; color: #aaa; margin-bottom: 0.9rem; }
 
         .add-to-cart {
             width: 100%;
@@ -464,7 +380,6 @@
             transform: translateY(-1px);
         }
 
-        /* ===== MODAL BASE ===== */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -483,10 +398,7 @@
             animation: fadeIn 0.2s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @keyframes slideUp {
             from { opacity: 0; transform: translate(-50%, -46%); }
@@ -498,7 +410,6 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* ===== AUTH MODAL ===== */
         .auth-content {
             position: absolute;
             top: 50%;
@@ -520,16 +431,8 @@
             position: relative;
         }
 
-        .auth-header h2 {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .auth-header p {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.9rem;
-        }
+        .auth-header h2 { color: white; font-size: 1.5rem; margin-bottom: 0.3rem; }
+        .auth-header p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
 
         .auth-close {
             position: absolute;
@@ -549,9 +452,7 @@
             justify-content: center;
         }
 
-        .auth-close:hover {
-            background: rgba(255,255,255,0.35);
-        }
+        .auth-close:hover { background: rgba(255,255,255,0.35); }
 
         .auth-tabs {
             display: flex;
@@ -573,10 +474,7 @@
             position: relative;
         }
 
-        .auth-tab.active {
-            color: #667eea;
-            background: white;
-        }
+        .auth-tab.active { color: #667eea; background: white; }
 
         .auth-tab.active::after {
             content: '';
@@ -589,27 +487,14 @@
             border-radius: 3px 3px 0 0;
         }
 
-        .auth-tab:hover:not(.active) {
-            color: #555;
-            background: #f0f2f5;
-        }
+        .auth-tab:hover:not(.active) { color: #555; background: #f0f2f5; }
 
-        .auth-body {
-            padding: 1.8rem 2rem 2rem;
-        }
+        .auth-body { padding: 1.8rem 2rem 2rem; }
 
-        .auth-form {
-            display: none;
-        }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; animation: fadeIn 0.25s ease; }
 
-        .auth-form.active {
-            display: block;
-            animation: fadeIn 0.25s ease;
-        }
-
-        .form-group {
-            margin-bottom: 1.1rem;
-        }
+        .form-group { margin-bottom: 1.1rem; }
 
         .form-group label {
             display: block;
@@ -637,20 +522,10 @@
             background: white;
         }
 
-        .form-group input::placeholder {
-            color: #bbb;
-        }
+        .form-group input::placeholder { color: #bbb; }
 
-        .form-error {
-            font-size: 0.78rem;
-            color: #e74c3c;
-            margin-top: 0.3rem;
-            display: none;
-        }
-
-        .form-error.show {
-            display: block;
-        }
+        .form-error { font-size: 0.78rem; color: #e74c3c; margin-top: 0.3rem; display: none; }
+        .form-error.show { display: block; }
 
         .form-row {
             display: flex;
@@ -668,22 +543,10 @@
             cursor: pointer;
         }
 
-        .form-row label input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            accent-color: #667eea;
-        }
+        .form-row label input[type="checkbox"] { width: 16px; height: 16px; accent-color: #667eea; }
 
-        .form-row a {
-            font-size: 0.85rem;
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .form-row a:hover {
-            text-decoration: underline;
-        }
+        .form-row a { font-size: 0.85rem; color: #667eea; text-decoration: none; font-weight: 600; }
+        .form-row a:hover { text-decoration: underline; }
 
         .auth-submit {
             width: 100%;
@@ -698,14 +561,8 @@
             transition: all 0.3s;
         }
 
-        .auth-submit:hover {
-            box-shadow: 0 6px 22px rgba(102,126,234,0.45);
-            transform: translateY(-1px);
-        }
-
-        .auth-submit:active {
-            transform: translateY(0);
-        }
+        .auth-submit:hover { box-shadow: 0 6px 22px rgba(102,126,234,0.45); transform: translateY(-1px); }
+        .auth-submit:active { transform: translateY(0); }
 
         .auth-divider {
             display: flex;
@@ -716,18 +573,9 @@
             font-size: 0.82rem;
         }
 
-        .auth-divider::before,
-        .auth-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: #e9ecef;
-        }
+        .auth-divider::before, .auth-divider::after { content: ''; flex: 1; height: 1px; background: #e9ecef; }
 
-        .social-btns {
-            display: flex;
-            gap: 0.8rem;
-        }
+        .social-btns { display: flex; gap: 0.8rem; }
 
         .social-btn {
             flex: 1;
@@ -746,36 +594,14 @@
             gap: 0.5rem;
         }
 
-        .social-btn:hover {
-            border-color: #ccc;
-            background: #f8f9fa;
-        }
+        .social-btn:hover { border-color: #ccc; background: #f8f9fa; }
 
-        .auth-switch {
-            text-align: center;
-            margin-top: 1.2rem;
-            font-size: 0.88rem;
-            color: #888;
-        }
+        .auth-switch { text-align: center; margin-top: 1.2rem; font-size: 0.88rem; color: #888; }
+        .auth-switch a { color: #667eea; font-weight: 600; text-decoration: none; cursor: pointer; }
+        .auth-switch a:hover { text-decoration: underline; }
 
-        .auth-switch a {
-            color: #667eea;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .auth-switch a:hover {
-            text-decoration: underline;
-        }
-
-        .input-wrapper {
-            position: relative;
-        }
-
-        .input-wrapper input {
-            padding-right: 2.8rem;
-        }
+        .input-wrapper { position: relative; }
+        .input-wrapper input { padding-right: 2.8rem; }
 
         .toggle-pw {
             position: absolute;
@@ -791,11 +617,8 @@
             transition: color 0.2s;
         }
 
-        .toggle-pw:hover {
-            color: #667eea;
-        }
+        .toggle-pw:hover { color: #667eea; }
 
-        /* ===== PROFILE DROPDOWN ===== */
         .profile-dropdown {
             position: absolute;
             top: calc(100% + 8px);
@@ -810,9 +633,7 @@
             animation: fadeIn 0.15s ease;
         }
 
-        .profile-dropdown.show {
-            display: block;
-        }
+        .profile-dropdown.show { display: block; }
 
         .profile-dropdown-header {
             padding: 1.2rem;
@@ -835,10 +656,7 @@
             font-size: 1rem;
         }
 
-        .profile-dropdown-info {
-            flex: 1;
-            min-width: 0;
-        }
+        .profile-dropdown-info { flex: 1; min-width: 0; }
 
         .profile-dropdown-name {
             font-weight: 700;
@@ -868,20 +686,10 @@
             gap: 0.6rem;
         }
 
-        .profile-dropdown-item:hover {
-            background: #f8f9fa;
-            color: #333;
-        }
+        .profile-dropdown-item:hover { background: #f8f9fa; color: #333; }
+        .profile-dropdown-item.danger { color: #e74c3c; }
+        .profile-dropdown-item.danger:hover { background: #fef2f2; }
 
-        .profile-dropdown-item.danger {
-            color: #e74c3c;
-        }
-
-        .profile-dropdown-item.danger:hover {
-            background: #fef2f2;
-        }
-
-        /* ===== DETAIL MODAL ===== */
         .detail-content {
             position: absolute;
             top: 50%;
@@ -917,6 +725,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            color: #333;
         }
 
         .detail-close:hover { background: #fff; transform: scale(1.1); }
@@ -930,11 +739,7 @@
             background: #e9ecef;
         }
 
-        .detail-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .detail-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
         .detail-badge {
             position: absolute;
@@ -963,12 +768,7 @@
         }
 
         .detail-body { padding: 2rem; }
-
-        .detail-body h2 {
-            font-size: 1.6rem;
-            margin-bottom: 0.4rem;
-            color: #222;
-        }
+        .detail-body h2 { font-size: 1.6rem; margin-bottom: 0.4rem; color: #222; }
 
         .detail-category-tag {
             display: inline-block;
@@ -989,24 +789,9 @@
             flex-wrap: wrap;
         }
 
-        .detail-price {
-            font-size: 1.7rem;
-            font-weight: 800;
-            color: #e74c3c;
-        }
-
-        .detail-original-price {
-            font-size: 1rem;
-            color: #bbb;
-            text-decoration: line-through;
-        }
-
-        .detail-savings-line {
-            color: #27ae60;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-        }
+        .detail-price { font-size: 1.7rem; font-weight: 800; color: #e74c3c; }
+        .detail-original-price { font-size: 1rem; color: #bbb; text-decoration: line-through; }
+        .detail-savings-line { color: #27ae60; font-size: 0.95rem; font-weight: 600; margin-bottom: 1.2rem; }
 
         .detail-specs {
             background: #f8f9fa;
@@ -1015,14 +800,7 @@
             margin-bottom: 1.2rem;
         }
 
-        .detail-specs h4 {
-            font-size: 0.82rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #999;
-            margin-bottom: 0.6rem;
-        }
-
+        .detail-specs h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.8px; color: #999; margin-bottom: 0.6rem; }
         .detail-specs ul { list-style: none; padding: 0; }
 
         .detail-specs ul li {
@@ -1033,20 +811,9 @@
             padding-left: 1.3rem;
         }
 
-        .detail-specs ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #27ae60;
-            font-weight: bold;
-        }
+        .detail-specs ul li::before { content: '✓'; position: absolute; left: 0; color: #27ae60; font-weight: bold; }
 
-        .detail-desc {
-            font-size: 0.98rem;
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
+        .detail-desc { font-size: 0.98rem; color: #666; line-height: 1.8; margin-bottom: 1.5rem; }
 
         .detail-add-cart {
             width: 100%;
@@ -1061,12 +828,8 @@
             transition: all 0.3s;
         }
 
-        .detail-add-cart:hover {
-            box-shadow: 0 6px 22px rgba(102,126,234,0.5);
-            transform: translateY(-2px);
-        }
+        .detail-add-cart:hover { box-shadow: 0 6px 22px rgba(102,126,234,0.5); transform: translateY(-2px); }
 
-        /* ===== CART MODAL ===== */
         .cart-content {
             position: absolute;
             top: 50%;
@@ -1084,7 +847,6 @@
 
         .cart-content::-webkit-scrollbar { width: 5px; }
         .cart-content::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
-
         .cart-content h2 { margin-bottom: 1rem; font-size: 1.3rem; }
 
         .cart-item {
@@ -1096,11 +858,7 @@
             animation: slideInRight 0.25s ease;
         }
 
-        .cart-item-left {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
+        .cart-item-left { display: flex; align-items: center; gap: 0.8rem; }
 
         .cart-item-img {
             width: 50px;
@@ -1161,10 +919,7 @@
             transition: all 0.3s;
         }
 
-        .checkout-btn:hover {
-            box-shadow: 0 6px 20px rgba(39,174,96,0.4);
-            transform: translateY(-1px);
-        }
+        .checkout-btn:hover { box-shadow: 0 6px 20px rgba(39,174,96,0.4); transform: translateY(-1px); }
 
         @keyframes notifSlide {
             from { opacity: 0; transform: translateX(40px); }
@@ -1180,11 +935,8 @@
             margin-top: 2rem;
         }
 
-        .nav-right {
-            position: relative;
-        }
+        .nav-right { position: relative; }
 
-        /* Category tag on card */
         .product-category-tag {
             position: absolute;
             top: 12px;
@@ -1199,11 +951,13 @@
             z-index: 2;
         }
 
-        /* Highlight match */
-        .highlight-match {
-            background: #fff3cd;
-            padding: 0 2px;
-            border-radius: 3px;
+        .highlight-match { background: #fff3cd; padding: 0 2px; border-radius: 3px; }
+
+        .product-count-label {
+            font-size: 0.88rem;
+            color: #888;
+            font-weight: 500;
+            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -1255,36 +1009,34 @@
             <p>Beli produk berkualitas dengan harga terbaik 🔥 Flash sale hari ini!</p>
         </div>
 
-        <!-- Category Bar -->
         <div class="category-bar-wrapper">
             <div class="category-bar" id="categoryBar"></div>
         </div>
 
-        <!-- Filter Status -->
         <div class="filter-status" id="filterStatus">
             <div class="filter-status-text" id="filterStatusText"></div>
             <button class="filter-clear-btn" onclick="clearAllFilters()">✕ Reset Filter</button>
         </div>
 
-        <!-- Empty State -->
         <div class="empty-state" id="emptyState">
             <div class="empty-state-icon">🔍</div>
             <h3>Produk tidak ditemukan</h3>
             <p id="emptyStateMsg">Coba kata kunci lain atau pilih kategori berbeda.</p>
         </div>
 
-        <!-- Default Sections (shown when no filter active) -->
         <div id="defaultSections">
             <div class="section-title">🔥 Promo & Diskon Spesial</div>
+            <div class="product-count-label" id="discountCountLabel"></div>
             <div class="products" id="discountProducts"></div>
 
             <div class="section-title">📦 Semua Produk</div>
+            <div class="product-count-label" id="allCountLabel"></div>
             <div class="products" id="allProducts"></div>
         </div>
 
-        <!-- Filtered Section (shown when filter active) -->
         <div id="filteredSection" style="display:none;">
             <div class="section-title" id="filteredTitle">📦 Hasil Pencarian</div>
+            <div class="product-count-label" id="filteredCountLabel"></div>
             <div class="products" id="filteredProducts"></div>
         </div>
     </main>
@@ -1328,11 +1080,8 @@
                         <button type="button" class="social-btn" onclick="socialLogin('Google')">🔵 Google</button>
                         <button type="button" class="social-btn" onclick="socialLogin('Facebook')">🔷 Facebook</button>
                     </div>
-                    <div class="auth-switch">
-                        Belum punya akun? <a onclick="switchTab('register')">Daftar sekarang</a>
-                    </div>
+                    <div class="auth-switch">Belum punya akun? <a onclick="switchTab('register')">Daftar sekarang</a></div>
                 </form>
-
                 <form class="auth-form" id="registerForm" onsubmit="handleRegister(event)">
                     <div class="form-group">
                         <label>Nama Lengkap</label>
@@ -1377,9 +1126,7 @@
                         <button type="button" class="social-btn" onclick="socialLogin('Google')">🔵 Google</button>
                         <button type="button" class="social-btn" onclick="socialLogin('Facebook')">🔷 Facebook</button>
                     </div>
-                    <div class="auth-switch">
-                        Sudah punya akun? <a onclick="switchTab('login')">Masuk di sini</a>
-                    </div>
+                    <div class="auth-switch">Sudah punya akun? <a onclick="switchTab('login')">Masuk di sini</a></div>
                 </form>
             </div>
         </div>
@@ -1415,112 +1162,265 @@
             { id: 'aksesoris-lainnya', name: 'Aksesoris Lainnya', icon: '🔌' },
         ];
 
-        // ===== DATA PRODUK =====
+        // ===== DATA PRODUK (35 produk, min 5 per kategori) =====
         const products = [
+            // === LAPTOP (5) ===
             {
-                id: 1, name: 'Laptop Gaming ROG Strix', price: 15000000, originalPrice: 18500000, discount: 19,
+                id: 1, name: 'Laptop Gaming ROG Strix G16', price: 15000000, originalPrice: 18500000, discount: 19,
                 category: 'laptop',
                 image: 'https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?w=600&h=400&fit=crop&q=80',
                 description: 'Laptop gaming berperforma tinggi yang dirancang khusus untuk para gamer dan kreator konten. Dilengkapi prosesor generasi terbaru dan kartu grafis flagship.',
                 specs: ['Prosesor Intel Core i7 Gen 13', 'RAM 16GB DDR5', 'SSD 512GB NVMe', 'GPU RTX 4060 6GB', 'Layar 15.6" IPS 144Hz', 'Sistem Pendingin Dual Fan']
             },
             {
-                id: 2, name: 'Smartphone Galaxy Ultra', price: 4500000, originalPrice: 5299000, discount: 15,
+                id: 2, name: 'MacBook Air M2 Midnight', price: 18500000,
+                category: 'laptop',
+                image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&h=400&fit=crop&q=80',
+                description: 'MacBook Air dengan chip M2 yang powerful namun tetap ultra-tipis dan ringan. Desain midnight yang elegan, cocok untuk profesional kreatif.',
+                specs: ['Chip Apple M2 8-Core', 'RAM 8GB Unified', 'SSD 256GB', 'Layar Retina 13.6"', 'Baterai hingga 18 Jam', 'MagSafe Charging']
+            },
+            {
+                id: 3, name: 'ASUS VivoBook 14 OLED', price: 8500000, originalPrice: 9800000, discount: 13,
+                category: 'laptop',
+                image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&h=400&fit=crop&q=80',
+                description: 'Laptop produktivitas sehari-hari dengan layar OLED memukau. Sangat cocok untuk pelajar, pekerja kantoran, dan content creator pemula.',
+                specs: ['Prosesor AMD Ryzen 5 5600H', 'RAM 8GB DDR4', 'SSD 512GB NVMe', 'Layar OLED 14" 2.8K', 'Backlit Keyboard', 'Berat hanya 1.4 kg']
+            },
+            {
+                id: 4, name: 'Acer Aspire Lite 14', price: 11200000, originalPrice: 13500000, discount: 17,
+                category: 'laptop',
+                image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=600&h=400&fit=crop&q=80',
+                description: 'Laptop premium dari HP dengan desain aluminum yang mewah. Performa andal untuk multitasking berat dan presentasi bisnis.',
+                specs: ['Prosesor Intel Core i5-1335U', 'RAM 16GB DDR4', 'SSD 512GB PCIe', 'Layar 15.6" FHD IPS', 'Fingerprint Reader', 'Dual Speaker Bang & Olufsen']
+            },
+            {
+                id: 5, name: 'Lenovo Legion 5 Pro', price: 17500000, originalPrice: 21000000, discount: 17,
+                category: 'laptop',
+                image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=600&h=400&fit=crop&q=80',
+                description: 'Laptop gaming kelas atas dengan layar 16 inci beresolusi QHD dan refresh rate tinggi. Sistem pendingin Coldfront 4.0 menjaga suhu optimal.',
+                specs: ['Prosesor AMD Ryzen 7 7735HS', 'RAM 16GB DDR5', 'SSD 1TB NVMe', 'GPU RTX 4070 8GB', 'Layar 16" QHD 165Hz', 'Coldfront 4.0 Cooling']
+            },
+
+            // === SMARTPHONE & TABLET (5) ===
+            {
+                id: 6, name: 'Samsung Galaxy S24 Ultra', price: 18500000, originalPrice: 21999000, discount: 16,
                 category: 'smartphone-tablet',
                 image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop&q=80',
-                description: 'Smartphone mid-range dengan kamera utama 108MP yang menangkap setiap momen dengan jernih. Layar AMOLED 6.7 inci memberikan warna vivid.',
-                specs: ['Layar AMOLED 6.7" 90Hz', 'Kamera 108MP + 8MP + 2MP', 'RAM 8GB', 'Storage 128GB', 'Baterai 5000mAh', 'Fast Charging 33W']
+                description: 'Flagship terbaru Samsung dengan Galaxy AI yang revolusioner. Kamera 200MP menghasilkan foto berkualitas profesional dalam genggaman Anda.',
+                specs: ['Layar Dynamic AMOLED 6.8" 120Hz', 'Kamera 200MP + 12MP + 50MP + 10MP', 'RAM 12GB', 'Storage 256GB', 'Baterai 5000mAh', 'Galaxy AI Features', 'S Pen Built-in']
             },
             {
-                id: 3, name: 'Headphone Sony WH-1000', price: 850000, originalPrice: 1200000, discount: 29,
-                category: 'audio',
-                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=80',
-                description: 'Headphone wireless premium dengan Active Noise Cancellation yang efektif memblokir kebisingan lingkungan. Driver 40mm menghasilkan suara bass yang dalam.',
-                specs: ['Active Noise Cancellation', 'Driver 40mm', 'Bluetooth 5.2', 'Baterai hingga 40 jam', 'Foldable & Travel-friendly', 'Multipoint Connection']
-            },
-            {
-                id: 4, name: 'Smartwatch Pro Watch 5', price: 1200000,
-                category: 'wearable',
-                image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&h=400&fit=crop&q=80',
-                description: 'Smartwatch stylish dengan fitur kesehatan lengkap mulai dari pemantauan detak jantung, SpO2, hingga tracking tidur. Tahan air hingga 50 meter.',
-                specs: ['Layar AMOLED 1.43"', 'Heart Rate & SpO2 Monitor', 'GPS Built-in', 'Tahan Air 5ATM', 'Baterai hingga 14 hari', '100+ Mode Olahraga']
-            },
-            {
-                id: 5, name: 'Kamera Canon EOS R6', price: 8500000, originalPrice: 10500000, discount: 19,
-                category: 'fotografi',
-                image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop&q=80',
-                description: 'Kamera mirrorless profesional dengan sensor full-frame 24.2MP yang menghasilkan foto berkualitas studio.',
-                specs: ['Sensor Full-Frame 24.2MP', 'ISO Range 100-40000', 'Autofocus 45 titik', 'Video 4K 30fps', 'Body Magnesium Alloy', 'Weather Sealed']
-            },
-            {
-                id: 6, name: 'Tablet iPad Air', price: 3200000,
+                id: 7, name: 'Apple iPad Air M1', price: 9500000, originalPrice: 10999000, discount: 14,
                 category: 'smartphone-tablet',
                 image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&h=400&fit=crop&q=80',
-                description: 'Tablet serbaguna dengan layar 10.4 inci yang nyaman untuk bekerja, belajar, atau hiburan. Didukung stylus pen untuk kreativitas.',
-                specs: ['Layar IPS 10.4" 2K', 'RAM 6GB', 'Storage 128GB', 'Baterai 7040mAh', 'Support Stylus Pen', 'Chipset Octa-core']
+                description: 'Tablet serbaguna dengan chip M1 yang sangat powerful. Layar 10.9 inci Liquid Retina nyaman untuk bekerja, belajar, atau hiburan.',
+                specs: ['Chip Apple M1', 'Layar Liquid Retina 10.9"', 'RAM 8GB', 'Storage 64GB', 'Baterai 10 Jam', 'Support Apple Pencil 2nd Gen']
             },
             {
-                id: 7, name: 'Speaker JBL Boombox 3', price: 1650000, originalPrice: 2200000, discount: 25,
+                id: 8, name: 'iPhone 15 Pro Max', price: 21999000,
+                category: 'smartphone-tablet',
+                image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=600&h=400&fit=crop&q=80',
+                description: 'iPhone terkuat dengan chip A17 Pro dan material titanium. Kamera 48MP dengan zoom optik 5x untuk hasil foto dan video sinematik.',
+                specs: ['Chip A17 Pro', 'Layar Super Retina XDR 6.7"', 'Kamera 48MP + 12MP + 12MP', 'RAM 8GB', 'Storage 256GB', 'Action Button', 'USB-C']
+            },
+            {
+                id: 9, name: 'Samsung Galaxy Tab S9 FE', price: 5800000, originalPrice: 6499000, discount: 11,
+                category: 'smartphone-tablet',
+                image: 'https://images.unsplash.com/photo-1561154464-82e9adf32764?w=600&h=400&fit=crop&q=80',
+                description: 'Tablet mid-range Samsung dengan layar TFT besar dan S Pen included. Ideal untuk catatan, menggambar, dan multimedia.',
+                specs: ['Chipset Exynos 1380', 'Layar TFT 10.9" 90Hz', 'RAM 6GB', 'Storage 128GB', 'Baterai 8000mAh', 'S Pen Included', 'IP68 Water Resistant']
+            },
+            {
+                id: 10, name: 'Xiaomi 14 Ultra Leica', price: 12999000, originalPrice: 14999000, discount: 13,
+                category: 'smartphone-tablet',
+                image: 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=600&h=400&fit=crop&q=80',
+                description: 'Smartphone photography powerhouse dengan kolaborasi Leica. Quad kamera 50MP menghasilkan foto setara kamera profesional.',
+                specs: ['Snapdragon 8 Gen 3', 'Layar AMOLT 6.73" 120Hz', 'Quad Camera 50MP Leica', 'RAM 16GB', 'Storage 512GB', 'Baterai 5300mAh', '90W Fast Charging']
+            },
+
+            // === AUDIO (5) ===
+            {
+                id: 11, name: 'Headphone Sony WH-1000XM5', price: 4200000, originalPrice: 5299000, discount: 21,
+                category: 'audio',
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop&q=80',
+                description: 'Headphone wireless premium terbaik di kelasnya. Active Noise Cancellation generasi terbaru dengan dual chip processor untuk keheningan sempurna.',
+                specs: ['V1 + QN1 Dual ANC Processor', 'Driver 30mm Custom', 'Bluetooth 5.2 LDAC', 'Baterai hingga 30 Jam', 'Multipoint 2 Devices', 'Speak-to-Chat Auto Pause']
+            },
+            {
+                id: 12, name: 'JBL Boombox 3 Portable', price: 3200000, originalPrice: 4199000, discount: 24,
                 category: 'audio',
                 image: 'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&h=400&fit=crop&q=80',
-                description: 'Speaker Bluetooth premium dengan suara bass yang menggelegar dan powerful. Tahan air dan debu (IP67).',
-                specs: ['Output 60W', 'IP67 Water & Dust Proof', 'Bluetooth 5.3', 'Baterai 24 Jam', 'PartyBoost Mode', 'Built-in Powerbank']
+                description: 'Speaker Bluetooth premium dengan suara bass yang menggelegar. Tahan air dan debu IP67, cocok untuk outdoor adventure.',
+                specs: ['Output Power 60W RMS', 'IP67 Waterproof & Dustproof', 'Bluetooth 5.3', 'Baterai 24 Jam Non-Stop', 'PartyBoost 100+ Speaker', 'Built-in Powerbank Function']
             },
             {
-                id: 8, name: 'Keyboard Mechanical RGB', price: 750000,
-                category: 'aksesoris-komputer',
-                image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&h=400&fit=crop&q=80',
-                description: 'Keyboard mechanical full-size dengan switch Blue yang memberikan feedback tactile memuaskan. 16.8 juta warna RGB.',
-                specs: ['Switch Mechanical Blue', 'Full-Size Layout', '16.8M RGB Colors', 'Frame Aluminium', 'Anti-Ghosting NKRO', 'Cable Detachable USB-C']
-            },
-            {
-                id: 9, name: 'Mouse Gaming Logitech G502', price: 520000, originalPrice: 699000, discount: 26,
-                category: 'aksesoris-komputer',
-                image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&h=400&fit=crop&q=80',
-                description: 'Mouse gaming legendari dengan sensor HERO 25K yang memberikan akurasi hingga 25.600 DPI.',
-                specs: ['Sensor HERO 25K', '25.600 DPI', '11 Tombol Programmable', 'Weight Tuning System', 'RGB Lightsync', 'Switches 50M Clicks']
-            },
-            {
-                id: 10, name: 'Monitor Gaming 27" IPS', price: 3200000, originalPrice: 4100000, discount: 22,
-                category: 'aksesoris-komputer',
-                image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop&q=80',
-                description: 'Monitor gaming 27 inci dengan panel IPS dan refresh rate 165Hz untuk pengalaman gaming yang mulus.',
-                specs: ['Panel IPS 27" QHD', 'Refresh Rate 165Hz', 'Response Time 1ms', 'HDR400 Certified', 'FreeSync & G-Sync Compatible', 'Low Blue Light']
-            },
-            {
-                id: 11, name: 'TWS Earbuds Pro ANC', price: 680000, originalPrice: 899000, discount: 24,
+                id: 13, name: 'AirPods Pro 2nd Gen USB-C', price: 3199000, originalPrice: 3799000, discount: 16,
                 category: 'audio',
                 image: 'https://images.unsplash.com/photo-1590658268037-6bf12f032f55?w=600&h=400&fit=crop&q=80',
-                description: 'True Wireless Stereo earbuds dengan Active Noise Cancellation. Driver 11mm menghasilkan suara jernih.',
-                specs: ['Active Noise Cancellation', 'Driver 11mm', 'Bluetooth 5.3', 'IPX5 Sweat Resistant', 'Baterai Total 30 Jam', 'Transparency Mode']
+                description: 'Earbuds TWS terbaik untuk ekosistem Apple. ANC 2x lebih efektif dengan Adaptive Transparency dan Personalized Spatial Audio.',
+                specs: ['H2 Chip ANC 2x Better', 'Driver Custom Apple', 'Adaptive Transparency', 'IPX4 Sweat Resistant', 'Baterai Total 30 Jam', 'Personalized Spatial Audio', 'USB-C Charging Case']
             },
             {
-                id: 12, name: 'Powerbank 20000mAh', price: 285000,
-                category: 'aksesoris-lainnya',
-                image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=400&fit=crop&q=80',
-                description: 'Powerbank kapasitas besar 20000mAh dengan fast charging 22.5W. Desain slim dan ringan.',
-                specs: ['Kapasitas 20000mAh', 'Fast Charging 22.5W', '2 Port USB + 1 Type-C', 'Charge 4x Smartphone', 'LED Indicator', 'Safety Protection']
+                id: 14, name: 'Samsung Galaxy Buds2 Pro', price: 1850000, originalPrice: 2299000, discount: 20,
+                category: 'audio',
+                image: 'https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=600&h=400&fit=crop&q=80',
+                description: 'Earbuds premium Samsung dengan Audio 24bit Hi-Fi dan ANC canggih. Desain compact dan ringan nyaman dipakai seharian.',
+                specs: ['24bit Hi-Fi Audio', 'Coaxial 2-Way Speaker', 'Intelligent ANC', '360 Audio', 'IPX7 Waterproof', 'Baterai Total 30 Jam', 'Bluetooth 5.3']
             },
             {
-                id: 13, name: 'SSD External 1TB', price: 1100000, originalPrice: 1450000, discount: 24,
-                category: 'aksesoris-lainnya',
-                image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=400&fit=crop&q=80',
-                description: 'SSD external portabel dengan kecepatan baca/tulis hingga 1050/1000 MB/s.',
-                specs: ['Kapasitas 1TB', 'Baca 1050 MB/s', 'USB 3.2 Gen 2 Type-C', 'Shock Resistant', 'Compact 40g', 'PC/Mac/Android']
+                id: 15, name: 'Soundbar Samsung HW-T400', price: 1450000, originalPrice: 1799000, discount: 19,
+                category: 'audio',
+                image: 'https://images.unsplash.com/photo-1558089687-f282ffcbc126?w=600&h=400&fit=crop&q=80',
+                description: 'Soundbar 2.1 channel yang mengubah TV biasa menjadi home theater. Subwoofer wireless memberikan bass mendalam tanpa kabel berantakan.',
+                specs: ['2.1 Channel 160W', 'Wireless Subwoofer', 'Dolby Audio', 'Bluetooth Multi Connect', 'Game Mode', 'HDMI & USB Input']
+            },
+
+            // === AKSESORIS KOMPUTER (5) ===
+            {
+                id: 16, name: 'Keyboard Mechanical Keychron K8 Pro', price: 1150000, originalPrice: 1450000, discount: 21,
+                category: 'aksesoris-komputer',
+                image: 'https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&h=400&fit=crop&q=80',
+                description: 'Keyboard mechanical wireless 75% layout dengan switch Gateron yang smooth. RGB per-key dan wireless tri-mode connection.',
+                specs: ['Layout 75% Compact', 'Switch Gateron G Pro', 'Wireless Bluetooth 5.1 + 2.4GHz', 'RGB Per-Key South-Facing', 'Battery 4000mAh', 'Mac & Windows Compatible']
             },
             {
-                id: 14, name: 'Webcam 4K Auto Focus', price: 890000,
+                id: 17, name: 'Mouse Gaming Logitech G502 X', price: 899000, originalPrice: 1199000, discount: 25,
+                category: 'aksesoris-komputer',
+                image: 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=600&h=400&fit=crop&q=80',
+                description: 'Mouse gaming legendaris versi terbaru dengan sensor HERO 25K dan switch LIGHTSPEED hybrid. Bobot ultra-ringan hanya 85 gram.',
+                specs: ['Sensor HERO 25K 25.600 DPI', 'LIGHTSPEED Wireless + Bluetooth', 'Switch LIGHTSPEED Hybrid', '5 Tombol Programmable', 'Berat 85g Ultra-Light', 'Battery 140 Jam']
+            },
+            {
+                id: 18, name: 'Monitor LG UltraGear 27" 4K', price: 5800000, originalPrice: 7200000, discount: 19,
+                category: 'aksesoris-komputer',
+                image: 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=600&h=400&fit=crop&q=80',
+                description: 'Monitor gaming 27 inci 4K UHD dengan refresh rate 144Hz. Panel Nano IPS menghasilkan warna akurat 98% DCI-P3.',
+                specs: ['Panel Nano IPS 27" 4K UHD', 'Refresh Rate 144Hz', 'Response Time 1ms GTG', 'HDR600 VESA Certified', '98% DCI-P3 Color', 'HDMI 2.1 + DP 1.4']
+            },
+            {
+                id: 19, name: 'Webcam Elgato Facecam Pro 4K', price: 2400000, originalPrice: 2899000, discount: 17,
                 category: 'aksesoris-komputer',
                 image: 'https://images.unsplash.com/photo-1587826354460-e41b9e0f63b4?w=600&h=400&fit=crop&q=80',
-                description: 'Webcam 4K dengan autofocus cepat dan built-in dual microphone stereo.',
-                specs: ['Resolusi 4K 30fps', 'Autofocus Cepat', 'Dual Mic Stereo', 'FOV 90°', 'Plug & Play USB', 'Zoom/Meet/OBS Ready']
+                description: 'Webcam 4K60fps profesional untuk streaming dan video call berkualitas tinggi. Sensor Sony STARVIS memberikan gambar jernih di segala kondisi cahaya.',
+                specs: ['Resolusi 4K 60fps Uncompressed', 'Sensor Sony STARVIS', 'Uncompressed HDMI + USB-C', 'Manual Focus Ring', 'Elgato Camera Hub Software', 'Low Light Optimized']
             },
             {
-                id: 15, name: 'Mousepad Gaming XXL', price: 195000,
+                id: 20, name: 'Mousepad Artisan Hien XL Soft', price: 650000,
                 category: 'aksesoris-komputer',
-                image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=600&h=400&fit=crop&q=80',
-                description: 'Mousepad gaming berukuran extra large 80x30cm dengan permukaan micro-woven cloth.',
-                specs: ['Ukuran 80 x 30 cm', 'Micro-Woven Surface', 'Anti-Slip Rubber Base', 'Tebal 4mm', 'Stitched Edges', 'All Mouse Compatible']
+                image: 'https://images.unsplash.com/photo-1615663245857-ac93bb7c39e1?w=600&h=400&fit=crop&q=80',
+                description: 'Mousepad premium buatan Jepang dengan permukaan kain mid-speed yang seimbang. Base rubber anti-slip dan stitching edges yang presisi.',
+                specs: ['Ukuran XL 49 x 42 cm', 'Kain Mid-Speed Surface', 'Base Rubber Anti-Slip', 'Stitched Edges Presisi', 'Tebal 4mm', 'Hand-Washable']
+            },
+
+            // === FOTOGRAFI (5) ===
+            {
+                id: 21, name: 'Canon EOS R6 Mark II Body', price: 31000000, originalPrice: 36000000, discount: 14,
+                category: 'fotografi',
+                image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop&q=80',
+                description: 'Kamera mirrorless full-frame andalan Canon untuk fotografer profesional. Autofokus AI terbaik di kelasnya dengan 1053 titik fokus.',
+                specs: ['Sensor Full-Frame 24.2MP CMOS', 'DIGIC X Processor', 'AF AI 1053 Titik', 'Burst 40fps Electronic', 'Video 4K 60fps 10-bit', 'IBIS 8 Stop', 'Weather Sealed']
+            },
+            {
+                id: 22, name: 'Sony FE 50mm f/1.4 GM', price: 13500000,
+                category: 'fotografi',
+                image: 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?w=600&h=400&fit=crop&q=80',
+                description: 'Lensa prime premium G Master dengan aperture f/1.4 yang menghasilkan bokeh luar biasa. Optik Nano AR Coating II mengurangi flare dan ghosting.',
+                specs: ['Focal Length 50mm', 'Aperture f/1.4 - f/16', 'Sony E-Mount Full-Frame', '2 XA Aspherical Elements', 'Nano AR Coating II', '11 Blade Circular Aperture', 'Berat 516g']
+            },
+            {
+                id: 23, name: 'Tripod Manfrotto 190 Go Aluminium', price: 2800000, originalPrice: 3400000, discount: 18,
+                category: 'fotografi',
+                image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=600&h=400&fit=crop&q=80',
+                description: 'Tripol aluminium profesional yang ringan dan kokoh. Leg angle 4 posisi memungkinkan pengambilan foto dari berbagai sudut ekstrem.',
+                specs: ['Material Aluminium', 'Max Height 147 cm', 'Min Height 8 cm', 'Max Load 10 kg', '4 Leg Angle Positions', '90° Center Column', 'Berat 1.7 kg']
+            },
+            {
+                id: 24, name: 'Sony Alpha A7 IV Body', price: 28500000, originalPrice: 32999000, discount: 14,
+                category: 'fotografi',
+                image: 'https://images.unsplash.com/photo-1606986628253-e3df5ee9ca5d?w=600&h=400&fit=crop&q=80',
+                description: 'Kamera hybrid full-frame yang sempurna untuk foto dan video. Sensor 33MP baru dengan Real-time Tracking dan Eye AF untuk manusia dan hewan.',
+                specs: ['Sensor Exmor R 33MP CMOS', 'BIONZ XR Processor', '759 Phase-Detection AF Points', 'Video 4K 60fps 10-bit 4:2:2', 'IBIS 5.5 Stop', 'Dual Card Slot CFexpress + SD']
+            },
+            {
+                id: 25, name: 'DJI Mini 4 Pro Fly More Combo', price: 12500000, originalPrice: 14999000, discount: 17,
+                category: 'fotografi',
+                image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&h=400&fit=crop&q=80',
+                description: 'Drone mini tercanggih dengan kamera 4K HDR dan omnidirectional obstacle sensing. Bobot di bawah 249g tidak perlu registrasi di banyak negara.',
+                specs: ['Kamera 4K/60fps HDR', '1/1.3" CMOS Sensor', 'Omnidirectional Obstacle Sensing', '249g Ultra-Light', 'Max Flight 34 Menit', '20km HD Video Transmission', 'ActiveTrack 5.0']
+            },
+
+            // === WEARABLE (5) ===
+            {
+                id: 26, name: 'Apple Watch Ultra 2 GPS+Cellular', price: 14500000, originalPrice: 15999000, discount: 9,
+                category: 'wearable',
+                image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=600&h=400&fit=crop&q=80',
+                description: 'Smartwatch paling tangguh dari Apple dengan casing titanium grade 5. Dirancang untuk petualangan ekstrem dengan kedalaman hingga 40 meter.',
+                specs: ['Chip S9 SiP', 'Layar 3000 nit Ultra Bright', 'GPS + Cellular', 'Kedalaman 40m Water Resist', 'Battery 36-72 Jam', 'Dual Frequency GPS', 'Action Button']
+            },
+            {
+                id: 27, name: 'Xiaomi Smart Band 8 Pro', price: 599000, originalPrice: 749000, discount: 20,
+                category: 'wearable',
+                image: 'https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600&h=400&fit=crop&q=80',
+                description: 'Smartband affordable dengan layar AMOLED 1.74" terbesar di kelasnya. 150+ mode olahraga dan monitoring kesehatan lengkap.',
+                specs: ['Layar AMOLED 1.74" 450 nit', '150+ Mode Olahraga', 'Heart Rate & SpO2 24/7', 'Sleep Quality Monitoring', 'Baterai 14 Hari', '5ATM Water Resistant', 'NFC Payment']
+            },
+            {
+                id: 28, name: 'Oura Ring Gen 3 Heritage', price: 5200000,
+                category: 'wearable',
+                image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&h=400&fit=crop&q=80',
+                description: 'Cincin pintar yang memantau kesehatan secara mendalam termasuk sleep staging, HRV, dan suhu tubuh. Desain minimalis titanium yang stylish.',
+                specs: ['Sensor PPG Optik', 'Sleep Staging Analysis', 'Heart Rate Variability', 'Body Temperature Tracking', 'Baterai 7 Hari', 'Water Resistant 100m', 'Titanium Build']
+            },
+            {
+                id: 29, name: 'Garmin Forerunner 265', price: 6200000, originalPrice: 7299000, discount: 15,
+                category: 'wearable',
+                image: 'https://images.unsplash.com/photo-1557438159-51eec7a6c9e8?w=600&h=400&fit=crop&q=80',
+                description: 'GPS running watch dengan layar AMOLED cerah dan fitur training readiness. Analisis performa lari paling komprehensif di wrist Anda.',
+                specs: ['Layar AMOLED 1.3" 410x410', 'Multi-Band GPS', 'Training Readiness Score', 'Running Power & Dynamics', 'HRV Status Monitoring', 'Baterai 13 Hari (Smartwatch)', 'Garmin Pay Contactless']
+            },
+            {
+                id: 30, name: 'XREAL Air 2 AR Glasses', price: 5400000, originalPrice: 6499000, discount: 17,
+                category: 'wearable',
+                image: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=600&h=400&fit=crop&q=80',
+                description: 'Kacamata AR ultra-slim yang memberikan layar virtual 130" di depan mata. Cocok untuk menonton film, bermain game, dan bekerja secara portable.',
+                specs: ['Virtual Display 130" (6m)', 'Sony Micro-OLED 1080p/eye', '1080p 60Hz per Eye', 'USB-C Plug & Play', 'Berat 72g Ultra-Light', 'TÜV Rheinland Eye Comfort', 'Support 3DOF Head Tracking']
+            },
+
+            // === AKSESORIS LAINNYA (5) ===
+            {
+                id: 31, name: 'Anker PowerCore 20000mAh PD', price: 450000, originalPrice: 599000, discount: 25,
+                category: 'aksesoris-lainnya',
+                image: 'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600&h=400&fit=crop&q=80',
+                description: 'Powerbank premium dengan Power Delivery 65W yang bisa mengisi laptop. Kapasitas 20000mAh dengan desain compact dan portabel.',
+                specs: ['Kapasitas 20000mAh', 'Power Delivery 65W', '2x USB-C + 1x USB-A', 'Trickle-Charging Mode', 'LED Power Indicator', 'MultiProtect Safety System']
+            },
+            {
+                id: 32, name: 'Samsung T7 Shield SSD 2TB', price: 2350000, originalPrice: 2899000, discount: 19,
+                category: 'aksesoris-lainnya',
+                image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&h=400&fit=crop&q=80',
+                description: 'SSD external rugged dengan kecepatan transfer 1050 MB/s dan perlindungan IP65. Tahan jatuh hingga 3 meter, ideal untuk outdoor.',
+                specs: ['Kapasitas 2TB', 'Baca/Tulis 1050/1000 MB/s', 'USB 3.2 Gen 2 Type-C', 'IP65 Water & Dust Resistant', 'Drop Proof 3 Meter', 'AES 256-bit Encryption']
+            },
+            {
+                id: 33, name: 'Charger Anker 65W GaN Prime', price: 550000, originalPrice: 699000, discount: 21,
+                category: 'aksesoris-lainnya',
+                image: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&h=400&fit=crop&q=80',
+                description: 'Charger 65W dengan teknologi GaN III yang ultra-compact. 3 port output bisa mengisi laptop, tablet, dan phone secara bersamaan.',
+                specs: ['Output Total 65W Max', 'GaN III Technology', '2x USB-C + 1x USB-A', 'Smart Distribution Power', 'Foldable Plug Design', 'ActiveShield 2.0 Temperature Control']
+            },
+            {
+                id: 34, name: 'Casing iPhone 15 MagSafe Clear', price: 289000,
+                category: 'aksesoris-lainnya',
+                image: 'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&h=400&fit=crop&q=80',
+                description: 'Casing bening premium dengan MagSafe built-in magnet yang kuat. Material TPU anti-yellowing dengan perlindungan camera lip yang tinggi.',
+                specs: ['MagSafe Compatible', 'Anti-Yellowing TPU', 'Camera Lip Protection', 'Raised Edge Screen Guard', 'Wireless Charging Support', 'Slim Profile 1.5mm']
+            },
+            {
+                id: 35, name: 'Kabel USB-C Nylon Braided 2m', price: 149000, originalPrice: 199000, discount: 25,
+                category: 'aksesoris-lainnya',
+                image: 'https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600&h=400&fit=crop&q=80',
+                description: 'Kabel USB-C to USB-C nylon braided yang tahan lama. Mendukung fast charging 100W dan transfer data 480Mbps.',
+                specs: ['USB-C to USB-C', 'Panjang 2 Meter', 'Fast Charging 100W', 'Transfer Data 480Mbps', 'Nylon Braided Jacket', '10.000x Bend Tested', 'Aluminum Connector']
             }
         ];
 
@@ -1558,16 +1458,13 @@
                     </div>
                 `;
             } else {
-                el.innerHTML = `
-                    <button class="nav-btn" onclick="openAuth('login')">👤 <span class="btn-label">Masuk</span></button>
-                `;
+                el.innerHTML = `<button class="nav-btn" onclick="openAuth('login')">👤 <span class="btn-label">Masuk</span></button>`;
             }
         }
 
         function toggleProfileDropdown(e) {
             e.stopPropagation();
-            const dd = document.getElementById('profileDropdown');
-            dd.classList.toggle('show');
+            document.getElementById('profileDropdown').classList.toggle('show');
         }
 
         document.addEventListener('click', function(e) {
@@ -1590,29 +1487,13 @@
         }
 
         function switchTab(tab) {
-            const loginTab = document.getElementById('tabLogin');
-            const registerTab = document.getElementById('tabRegister');
-            const loginForm = document.getElementById('loginForm');
-            const registerForm = document.getElementById('registerForm');
-            const title = document.getElementById('authTitle');
-            const subtitle = document.getElementById('authSubtitle');
             clearErrors();
-
-            if (tab === 'login') {
-                loginTab.classList.add('active');
-                registerTab.classList.remove('active');
-                loginForm.classList.add('active');
-                registerForm.classList.remove('active');
-                title.textContent = 'Selamat Datang!';
-                subtitle.textContent = 'Masuk ke akun Anda untuk mulai belanja';
-            } else {
-                registerTab.classList.add('active');
-                loginTab.classList.remove('active');
-                registerForm.classList.add('active');
-                loginForm.classList.remove('active');
-                title.textContent = 'Buat Akun Baru';
-                subtitle.textContent = 'Daftar untuk mulai belanja di RakhaStore';
-            }
+            document.getElementById('tabLogin').classList.toggle('active', tab === 'login');
+            document.getElementById('tabRegister').classList.toggle('active', tab === 'register');
+            document.getElementById('loginForm').classList.toggle('active', tab === 'login');
+            document.getElementById('registerForm').classList.toggle('active', tab === 'register');
+            document.getElementById('authTitle').textContent = tab === 'login' ? 'Selamat Datang!' : 'Buat Akun Baru';
+            document.getElementById('authSubtitle').textContent = tab === 'login' ? 'Masuk ke akun Anda untuk mulai belanja' : 'Daftar untuk mulai belanja di RakhaStore';
         }
 
         function clearErrors() {
@@ -1716,9 +1597,8 @@
             const bar = document.getElementById('categoryBar');
             bar.innerHTML = categories.map(cat => {
                 const count = cat.id === 'semua' ? products.length : products.filter(p => p.category === cat.id).length;
-                const isActive = activeCategory === cat.id;
                 return `
-                    <button class="category-pill ${isActive ? 'active' : ''}" onclick="setCategory('${cat.id}')">
+                    <button class="category-pill ${activeCategory === cat.id ? 'active' : ''}" onclick="setCategory('${cat.id}')">
                         ${cat.icon} ${cat.name} <span class="pill-count">${count}</span>
                     </button>
                 `;
@@ -1765,13 +1645,8 @@
                 return;
             }
 
-            // Filter products
             let filtered = products;
-
-            if (activeCategory !== 'semua') {
-                filtered = filtered.filter(p => p.category === activeCategory);
-            }
-
+            if (activeCategory !== 'semua') filtered = filtered.filter(p => p.category === activeCategory);
             if (searchQuery.length > 0) {
                 const q = searchQuery.toLowerCase();
                 filtered = filtered.filter(p =>
@@ -1785,44 +1660,35 @@
             defaultSections.style.display = 'none';
             filteredSection.style.display = '';
 
-            // Build status text
             let statusParts = [];
             if (activeCategory !== 'semua') {
                 const catObj = categories.find(c => c.id === activeCategory);
                 statusParts.push(`Kategori: <strong>${catObj.icon} ${catObj.name}</strong>`);
             }
-            if (searchQuery.length > 0) {
-                statusParts.push(`Pencarian: <strong>"${escapeHTML(searchQuery)}"</strong>`);
-            }
+            if (searchQuery.length > 0) statusParts.push(`Pencarian: <strong>"${escapeHTML(searchQuery)}"</strong>`);
             document.getElementById('filterStatusText').innerHTML = statusParts.join(' &nbsp;•&nbsp; ') + ` &nbsp;—&nbsp; ${filtered.length} produk ditemukan`;
             filterStatus.classList.add('visible');
 
-            // Title
             let titleText = '📦 Hasil Filter';
-            if (searchQuery.length > 0 && activeCategory !== 'semua') titleText = '🔍 Hasil Pencarian';
-            else if (searchQuery.length > 0) titleText = '🔍 Hasil Pencarian';
+            if (searchQuery.length > 0) titleText = '🔍 Hasil Pencarian';
             else if (activeCategory !== 'semua') {
                 const catObj = categories.find(c => c.id === activeCategory);
                 titleText = `${catObj.icon} ${catObj.name}`;
             }
             document.getElementById('filteredTitle').textContent = titleText;
 
-            // Render
             if (filtered.length === 0) {
                 filteredSection.style.display = 'none';
                 filterStatus.classList.remove('visible');
                 emptyState.classList.add('visible');
                 let msg = 'Coba kata kunci lain atau pilih kategori berbeda.';
-                if (searchQuery.length > 0 && activeCategory !== 'semua') {
-                    msg = `Tidak ada produk "${escapeHTML(searchQuery)}" di kategori ini.`;
-                } else if (searchQuery.length > 0) {
-                    msg = `Tidak ada produk yang cocok dengan "${escapeHTML(searchQuery)}".`;
-                } else {
-                    msg = 'Kategori ini belum memiliki produk.';
-                }
+                if (searchQuery.length > 0 && activeCategory !== 'semua') msg = `Tidak ada produk "${escapeHTML(searchQuery)}" di kategori ini.`;
+                else if (searchQuery.length > 0) msg = `Tidak ada produk yang cocok dengan "${escapeHTML(searchQuery)}".`;
+                else msg = 'Kategori ini belum memiliki produk.';
                 document.getElementById('emptyStateMsg').textContent = msg;
             } else {
                 emptyState.classList.remove('visible');
+                document.getElementById('filteredCountLabel').textContent = `Menampilkan ${filtered.length} produk`;
                 document.getElementById('filteredProducts').innerHTML = filtered.map(p => createCardHTML(p, searchQuery)).join('');
             }
         }
@@ -1889,6 +1755,8 @@
         function renderProducts() {
             document.getElementById('discountProducts').innerHTML = discountProducts.map(p => createCardHTML(p)).join('');
             document.getElementById('allProducts').innerHTML = nonDiscountProducts.map(p => createCardHTML(p)).join('');
+            document.getElementById('discountCountLabel').textContent = `${discountProducts.length} produk diskon`;
+            document.getElementById('allCountLabel').textContent = `${nonDiscountProducts.length} produk tanpa diskon`;
         }
 
         // ===== PRODUCT DETAIL =====
@@ -2052,7 +1920,6 @@
                 else if (document.getElementById('cartModal').classList.contains('active')) toggleCart();
                 else if (document.getElementById('authModal').classList.contains('active')) closeAuth();
             }
-            // Ctrl+K or / to focus search (when not in input)
             if ((e.key === '/' || (e.ctrlKey && e.key === 'k')) && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
                 e.preventDefault();
                 searchInput.focus();
